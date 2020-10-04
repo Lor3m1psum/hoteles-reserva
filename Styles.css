@@ -1,0 +1,61 @@
+#app {
+  display:flex;
+  flex-direction: column;
+  font-family: 'Lato', sans-serif;
+  text-align: justify;
+}
+
+h1.title {
+  font-weight: 300;
+  font-size: 50px;
+  letter-spacing: 20px;
+  padding-bottom: 5%;
+  padding-top: 2%;
+}
+
+h3.subtitle {
+  font-weight: 400;
+  font-size: 20px ;
+  text-align: left;
+}
+
+div.notification {
+  display:flex;
+  -webkit-box-shadow: 0px 9px 13px -5px rgba(0,0,0,0.17);
+  -moz-box-shadow: 0px 9px 13px -5px rgba(0,0,0,0.17);
+  box-shadow: 0px 9px 13px -5px rgba(0,0,0,0.17);
+  color: rgb(111, 113, 114);
+  border-bottom: solid orange;
+  justify-content: center;
+  font-size: 20px ;
+  text-align: center;
+}
+
+.is-wrap { 
+  margin:2em;
+  flex-wrap: wrap;
+}
+.columns.is-wrap {
+  margin: 2em;
+  
+
+}
+.card-image{
+  padding:1em;
+
+}
+
+.field {
+  margin:1em;
+}
+
+.select {
+  width:100%;
+}
+
+.fa-map-marked-alt {
+  opacity:50%;
+}
+.card-footer {
+  width: 100%;
+}
