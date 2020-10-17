@@ -49,7 +49,7 @@ function Hotel(props) {
                         </div>
                     </div>
                     <div className="card-footer">
-                        <a onClick={alertReserva} className="card-footer-item has-background-primary has-text-white has-text-weight-bold">Reservar</a>
+                        <a onClick={alertReserva} className="card-footer-item has-text-white has-text-weight-bold">Reservar</a>
                     </div>
                 </div>
             </div>

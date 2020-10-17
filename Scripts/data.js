@@ -1,7 +1,6 @@
 const today = new Date()
-const countryData=["Argentina","Brasil","Chile","Uruguay"];
 const priceData = [{value: 1, name: '$'}, {value: 2, name: '$$'}, {value: 3, name: '$$$'}, {value: 4, name: '$$$$'}];
-const roomsData = ["Pequeño", "Mediano", "Grande"];
+const roomsData = ["de 0 a 15 habitaciones", "de 16 a 30 habitaciones", "más de 30 habitaciones"];
 const hotelsData = [
   {
     slug: 'la-bamba-de-areco',

@@ -1,4 +1,4 @@
-function Header({ startDate, endDate, country, newPrice, rooms }) {
+function Header({ startDate, endDate, country, price, rooms }) {
 
   return (
     <section className="hero is-primary is-bold">
@@ -8,7 +8,9 @@ function Header({ startDate, endDate, country, newPrice, rooms }) {
             <b>HOTELES</b> RESERVA
           </h1>
           <h3 className="subtitle">
-            <span>desde el <b>{startDate}</b> hasta el <b>{endDate}</b> en alguna ciudad de <b>{country}</b> por un costo de <b>{newPrice}</b> y de tamaño <b>{rooms}</b> </span>
+            <span >desde el <b>{startDate}</b> hasta el <b>{endDate}</b> en alguna ciudad de <b> {country} </b> 
+             por un costo de <b> { price ? ` ${'$'.repeat(price)}` : '' } </b> 
+            y de tamaño <b>{rooms}</b> </span>
           </h3>
         </div>
       </div>

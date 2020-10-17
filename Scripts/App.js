@@ -1,76 +1,52 @@
 moment.locale ('es');
 class App extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.setStartDate = this.setStartDate.bind(this);
-    this.setEndDate = this.setEndDate.bind(this);
-    this.setCountry = this.setCountry.bind(this);
-    this.setNewPrice = this.setNewPrice.bind(this);
-    this.setRooms = this.setRooms.bind(this);
-  }
-
   state = {
-    filter: {
       startDate: moment().format('dddd, MMMM D, YYYY'),
       endDate: moment().add (1, 'days').format('dddd, MMMM D, YYYY'),
-      country: '',
-      newPrice: '',
-      rooms: ''
-    },
-    hotelesData: hotelsData,
+      country: '0',
+      price: "0",
+      rooms: '0',
+    hotelesData: hotelsData
   };
 
   setStartDate(newDate) {
     this.setState ({
       ...this.state,
-      filter: {
-        ...this.state.filter,
-        startDate: newDate,
-        
+        startDate: newDate
       },
-    });
+    );
   }
 
   setEndDate(newDate) {
     this.setState ({
       ...this.state,
-      filter: {
-        ...this.state.filter,
-        endDate: newDate,
+        endDate: newDate
       },
-    });
+    );
   }
 
-  setCountry(country){
+  setCountry = e => {
+    let newCountry = e.target.value
     this.setState({
-      ...this.state,
-      filter: {
-        ...this.state.filter,
-        country
+      country:newCountry
       }
-    })
+    )
   }
 
-  setNewPrice(newPrice){
+  setNewPrice = e => {
+    let newPrice = e.target.value
     this.setState({
-      ...this.state,
-      filter: {
-        ...this.state.filter,
-        newPrice
+        price: newPrice
       }
-    })
+    )
   }
 
-  setRooms(rooms){
+  setRooms = e => {
+    let newRooms = e.target.value
     this.setState({
-      ...this.state,
-      filter: {
-        ...this.state.filter,
-        rooms
+        rooms: newRooms
       }
-    })
+    )
   }
 
   render () {
@@ -78,11 +54,11 @@ class App extends React.Component {
       <div>
 
         <Header 
-        startDate={this.state.filter.startDate}
-        endDate={this.state.filter.endDate}
-        country={this.state.filter.country}
-        newPrice={this.state.filter.newPrice}
-        rooms={this.state.filter.rooms}
+        startDate={this.state.startDate}
+        endDate={this.state.endDate}
+        country={this.state.country}
+        price={this.state.price}
+        rooms={this.state.rooms}
         />
         <Filters
           setStartDate={this.setStartDate}
@@ -91,7 +67,13 @@ class App extends React.Component {
           setNewPrice={this.setNewPrice}
           setRooms={this.setRooms}
         />
-        <Hoteles hoteles={this.state.hotelesData} />
+        <Hoteles 
+        startDate={this.state.startDate}
+        endDate={this.state.endDate}
+        country={this.state.country}
+        price={this.state.price}
+        rooms={this.state.rooms}
+        hoteles={this.state.hotelesData} />
       </div>
     );
   }

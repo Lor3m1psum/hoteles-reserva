@@ -1,12 +1,13 @@
 moment.locale('es');
-function Filters({ setStartDate, setEndDate, setCountry, setNewPrice, setRooms }) {
+function Filters(props) {
+  console.log(props)
 
   return (
-    <nav className="navbar is-container">
+    <nav className="navbar is-wrap is-container">
       <div className="container is-widescreen">
         <div className="notification">
-          <div className="field">
-            <input
+          <div className="control has-icons-left">
+            <input 
               className="input"
               type="date"
               onChange={event => {
@@ -14,11 +15,11 @@ function Filters({ setStartDate, setEndDate, setCountry, setNewPrice, setRooms }
                 setStartDate(date);
               }}
             />
-            <span className="icon is-small is-left">
-              <i className="fas" />
-            </span>
+            <div className="icon is-small is-left">
+              <i className="fas fa-calendar" />
+            </div>
           </div>
-          <div className="field">
+          <div className="control has-icons-left">
             <input
               className="input"
               type="date"
@@ -27,24 +28,23 @@ function Filters({ setStartDate, setEndDate, setCountry, setNewPrice, setRooms }
                 setEndDate(date);
               }}
             />
-            <span className="icon is-small is-left">
-              <i className="fas" />
-            </span>
+            <div className="icon is-small is-left">
+              <i className="fas fa-calendar" />
+            </div>
           </div>
           <div className="field">
             <div className="control has-icons-left">
               <div className="select">
-                <select onChange={(event) => { setCountry(event.target.value) }}>
-                  <option>Todos los países</option>
-                  {countryData.map((country, i) => {
-                    return (
-                      <option value={country} key={i}>{country}</option>
-                    )
-                  })}
+                <select onChange={props.setCountry}>
+                  <option value="0">Todos los países</option>
+                  <option value="Argentina">Argentina</option>
+                  <option value="Brasil">Brasil</option>
+                  <option value="Chile">Chile</option>
+                  <option value="Uruguay" >Uruguay</option>
                 </select>
               </div>
               <div className="icon is-small is-left">
-                <i className="fas" />
+                <i className="fas fa-globe-americas" />
               </div>
             </div>
           </div>
@@ -52,38 +52,31 @@ function Filters({ setStartDate, setEndDate, setCountry, setNewPrice, setRooms }
             <div className="control has-icons-left">
               <div className="select">
                 <select
-                  onChange={(event) => { setNewPrice(event.target.value) }}>
-                  <option>Todos los precios</option>
-                  {priceData.map((price, i) => {
-                    return (
-                      <option
-                        value={price}
-                        key={i}>
-                        {price.name}
-                      </option>
-                    )
-                  })}
+                  onChange={props.setNewPrice}>
+                  <option value ="0">Todos los precios</option>
+                  <option value="1">$</option>
+                  <option value="2">$$</option>
+                  <option value="3">$$$</option>
+                  <option value="4">$$$$</option>
                 </select>
               </div>
               <div className="icon is-small is-left">
-                <i className="fas" />
+                <i className="far fa-money-bill-alt"/>
               </div>
             </div>
           </div>
           <div className="field">
             <div className="control has-icons-left">
               <div className="select">
-                <select onChange={(event) => { setRooms(event.target.value) }}>
-                  <option>Todos los tamaños</option>
-                  {roomsData.map((rooms, i) => {
-                    return (
-                      <option value={rooms} key={i}>{rooms}</option>
-                    )
-                  })}
+                <select onChange={props.setRooms}>
+                  <option value ="0">Sin límite de habitaciones</option>
+                  <option value="Pequeño"> De 1 a 15 habitaciones</option>
+                  <option value="Mediano"> De 16 a 30 habitaciones</option>
+                  <option value="Grande"> Más de 30 habitaciones</option>
                 </select>
               </div>
               <div className="icon is-small is-left">
-                <i className="fas" />
+                <i className="fas fa-bed" />
               </div>
             </div>
           </div>

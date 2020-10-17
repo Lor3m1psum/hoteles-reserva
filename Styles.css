@@ -21,6 +21,7 @@ h3.subtitle {
 
 div.notification {
   display:flex;
+  flex-wrap: wrap;
   -webkit-box-shadow: 0px 9px 13px -5px rgba(0,0,0,0.17);
   -moz-box-shadow: 0px 9px 13px -5px rgba(0,0,0,0.17);
   box-shadow: 0px 9px 13px -5px rgba(0,0,0,0.17);
@@ -32,20 +33,18 @@ div.notification {
 }
 
 .is-wrap { 
-  margin:2em;
   flex-wrap: wrap;
 }
 .columns.is-wrap {
   margin: 2em;
-  
 
 }
 .card-image{
   padding:1em;
 
-}
+} 
 
-.field {
+.control {
   margin:1em;
 }
 
@@ -58,4 +57,8 @@ div.notification {
 }
 .card-footer {
   width: 100%;
+  background: linear-gradient(180deg, #6de0db 0%, #02ca98 30%);
+  background-size: 1px 100px;
+  transition: all .3s;
 }
+
