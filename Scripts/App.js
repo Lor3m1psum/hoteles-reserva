@@ -9,18 +9,18 @@ class App extends React.Component {
     hotelesData: hotelsData
   };
 
-  setStartDate(newDate) {
+  setStartDate = e => {
+    let newInitialDate = e.target.value
     this.setState ({
-      ...this.state,
-        startDate: newDate
+        startDate: newInitialDate
       },
     );
   }
 
-  setEndDate(newDate) {
+  setEndDate = e => {
+    let newFinalDate = e.target.value
     this.setState ({
-      ...this.state,
-        endDate: newDate
+        startDate: newFinalDate
       },
     );
   }

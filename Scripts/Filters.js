@@ -12,7 +12,7 @@ function Filters(props) {
               type="date"
               onChange={event => {
                 let date = moment(event.target.value).format('dddd, MMMM D, YYYY');
-                setStartDate(date);
+                props.setStartDate(date);
               }}
             />
             <div className="icon is-small is-left">
@@ -25,7 +25,7 @@ function Filters(props) {
               type="date"
               onChange={event => {
                 let date = moment(event.target.value).format('dddd, MMMM D, YYYY');
-                setEndDate(date);
+                props.setEndDate(date);
               }}
             />
             <div className="icon is-small is-left">
