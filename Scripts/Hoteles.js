@@ -1,10 +1,8 @@
 function Hoteles(props) {
-  let newHoteles = props.hoteles
-  
-  newHoteles =newHoteles.filter((x) =>
-      moment(x.availabilityFrom).isSameOrBefore(props.setStartDate, "day") &&
-      moment(x.availabilityTo).isSameOrAfter(props.setEndDate, "day")
-  )
+  let newHoteles = props.hoteles;
+
+  if (props.endDate) {newHoteles = newHoteles.filter((hotel) => moment(hotel.availabilityTo).isSameOrAfter(props.endDate), 'day'); }
+      newHoteles = newHoteles.filter((hotel) => moment(hotel.availabilityFrom).isSameOrBefore(props.startDate, 'day'))
 
   if (props.country !== "0") {
     newHoteles = newHoteles.filter(

@@ -1,5 +1,6 @@
 function Hotel(props) {
     let moneyIcons = []
+
     for (var i = 0; i < 4; i++) {
         var style = {
             margin: '0 .125em'

@@ -10,10 +10,8 @@ function Filters(props) {
             <input 
               className="input"
               type="date"
-              onChange={event => {
-                let date = moment(event.target.value).format('dddd, MMMM D, YYYY');
-                props.setStartDate(date);
-              }}
+              onChange={props.setStartDate}
+              value={props.startDate}
             />
             <div className="icon is-small is-left">
               <i className="fas fa-calendar" />
@@ -23,10 +21,8 @@ function Filters(props) {
             <input
               className="input"
               type="date"
-              onChange={event => {
-                let date = moment(event.target.value).format('dddd, MMMM D, YYYY');
-                props.setEndDate(date);
-              }}
+              onChange={props.setEndDate}
+              value={props.EndDate}
             />
             <div className="icon is-small is-left">
               <i className="fas fa-calendar" />

@@ -3,9 +3,9 @@ class App extends React.Component {
   state = {
       startDate: moment().format('dddd, MMMM D, YYYY'),
       endDate: moment().add (1, 'days').format('dddd, MMMM D, YYYY'),
-      country: '0',
+      country: "0",
       price: "0",
-      rooms: '0',
+      rooms: "0",
     hotelesData: hotelsData
   };
 
@@ -20,7 +20,7 @@ class App extends React.Component {
   setEndDate = e => {
     let newFinalDate = e.target.value
     this.setState ({
-        startDate: newFinalDate
+        endDate: newFinalDate
       },
     );
   }
