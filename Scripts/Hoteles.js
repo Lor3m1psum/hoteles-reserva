@@ -4,17 +4,17 @@ function Hoteles(props) {
   if (props.endDate) {newHoteles = newHoteles.filter((hotel) => moment(hotel.availabilityTo).isSameOrAfter(props.endDate), 'day'); }
       newHoteles = newHoteles.filter((hotel) => moment(hotel.availabilityFrom).isSameOrBefore(props.startDate, 'day'))
 
-  if (props.country !== "0") {
+  if (props.country !== "todos los paises") {
     newHoteles = newHoteles.filter(
       hotel => hotel.country === props.country
     );
   }
-  if (props.price !== "0") {
+  if (props.price !== "todos los precios") {
     newHoteles = newHoteles.filter(
       hotel => hotel.price == props.price
     );
   }
-  if (props.rooms !== "0") {
+  if (props.rooms !== "todos los tamaños") {
     if (props.rooms === "Pequeño") {
       newHoteles = newHoteles.filter(hotel => hotel.rooms <= 15);
     } else if (props.rooms === "Mediano") {
@@ -26,28 +26,30 @@ function Hoteles(props) {
     }
   }
 
-
-
-
-
   return (
-    <div className="columns is-wrap is-grouped is-grouped-multiline">
-      {newHoteles.map((hotel, i) => { 
-        return (
-        <Hotel key={i}
-          photo={hotel.photo}
-          slug={hotel.slug}
-          name={hotel.name}
-          description={hotel.description}
-          city={hotel.city}
-          country={hotel.country}
-          rooms={hotel.rooms}
-          price ={hotel.price}
-        />
-        );
-      }
+      <div className="container">
+      <div className="columns is-wrap is-multiline is-grouped-multiline">
+      {newHoteles.length ? (newHoteles.map((hotel, i) => (
+            <Hotel key={i}
+            photo={hotel.photo}
+            slug={hotel.slug}
+            name={hotel.name}
+            description={hotel.description}
+            city={hotel.city}
+            country={hotel.country}
+            rooms={hotel.rooms}
+            price={hotel.price}
+          />
+        ))
+      ) : (
+      <article class="message is-warning is-light ">
+        <div class="message-body">
+          No se encuentran <strong>Hoteles disponibles</strong> con estos parámetros de búsqueda
+        </div>
+      </article>
       )
       }
     </div>
-  )
+    </div>
+  );
 }

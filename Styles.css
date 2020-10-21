@@ -32,16 +32,23 @@ div.notification {
   text-align: center;
 }
 
-.is-wrap { 
+.container {
   flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  align-content: center;
 }
-.columns.is-wrap {
-  margin: 2em;
 
+.columns {
+  margin: 1em;
+}
+
+.message.is{
+  display: flex;
+  align-items: center;
 }
 .card-image{
   padding:1em;
-
 } 
 
 .control {
@@ -52,13 +59,9 @@ div.notification {
   width:100%;
 }
 
-.fa-map-marked-alt {
-  opacity:50%;
-}
 .card-footer {
   width: 100%;
   background: linear-gradient(180deg, #6de0db 0%, #02ca98 30%);
   background-size: 1px 100px;
   transition: all .3s;
 }
-

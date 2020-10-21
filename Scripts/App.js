@@ -1,11 +1,11 @@
 moment.locale ('es');
 class App extends React.Component {
   state = {
-      startDate: moment().format('dddd, MMMM D, YYYY'),
+      startDate:  moment().format('dddd, MMMM D, YYYY'),
       endDate: moment().add (1, 'days').format('dddd, MMMM D, YYYY'),
-      country: "0",
-      price: "0",
-      rooms: "0",
+      country: "todos los paises",
+      price: "todos los precios",
+      rooms: "todos los tamaños",
     hotelesData: hotelsData
   };
 

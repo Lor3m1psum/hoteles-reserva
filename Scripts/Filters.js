@@ -32,7 +32,7 @@ function Filters(props) {
             <div className="control has-icons-left">
               <div className="select">
                 <select onChange={props.setCountry}>
-                  <option value="0">Todos los países</option>
+                  <option value= "todos los paises" >Todos los países</option>
                   <option value="Argentina">Argentina</option>
                   <option value="Brasil">Brasil</option>
                   <option value="Chile">Chile</option>
@@ -49,7 +49,7 @@ function Filters(props) {
               <div className="select">
                 <select
                   onChange={props.setNewPrice}>
-                  <option value ="0">Todos los precios</option>
+                  <option value ="todos los precios">Todos los precios</option>
                   <option value="1">$</option>
                   <option value="2">$$</option>
                   <option value="3">$$$</option>
@@ -65,7 +65,7 @@ function Filters(props) {
             <div className="control has-icons-left">
               <div className="select">
                 <select onChange={props.setRooms}>
-                  <option value ="0">Sin límite de habitaciones</option>
+                  <option value ="todos los tamaños">Sin límite de habitaciones</option>
                   <option value="Pequeño"> De 1 a 15 habitaciones</option>
                   <option value="Mediano"> De 16 a 30 habitaciones</option>
                   <option value="Grande"> Más de 30 habitaciones</option>
